@@ -67,7 +67,7 @@ public class IntroGUI : MonoBehaviour {
 			if (Input.GetKeyDown ("space")) {
 				introState = State.storyScreen;
 				audioPlayed = false;
-				music.musicSource.volume -= 3;
+				music.musicSource.volume = 0.3f;
 			}
 			break;
 			
@@ -162,7 +162,6 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.panel1;
 			}
 			if (GUI.Button (new Rect(Screen.width / 2 + 110, 350, 100, 50), "Sniff it Out")) {
-				music.musicSource.volume += 2;
 				
 				if (!audioPlayed) {
 					audio.Stop ();
@@ -243,7 +242,6 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.tutorialScreen2) {
-			music.musicSource.volume += 2;
 			
 			GUI.Label (new Rect(Screen.width / 2 - 96, 30, 250, 20), "You control patch with the arrow keys",style);
 			GUI.Label (new Rect(Screen.width / 2 - 89, 60, 250, 20), "Your \"friends\" direct you with theirs",style);

@@ -11,7 +11,7 @@ public class music : MonoBehaviour {
 	void Start () {
 		if (this.gameObject.GetComponent<AudioSource>() != null) {
 			musicSource = this.gameObject.GetComponent<AudioSource>();
-			nextPlayTime = Time.realtimeSinceStartup + playRate;
+			nextPlayTime = Time.realtimeSinceStartup + playRate + musicSource.clip.length;
 		}
 		
 	}
